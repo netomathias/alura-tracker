@@ -3,13 +3,11 @@ import Cronometro from './Cronometro.vue';
 
 <template>
     <Box class="box has-text-weight-bold">
-        <div class="columns">
-            <div class="column is-7">
-               {{ tarefa.descricao || 'Tarefa sem descrição'}}
-            </div>
-            <div class="column">
-                <Cronometro :tempo-em-segundos="tarefa.duracaoEmSegundos"/>
-            </div>
+        <div>
+            {{ tarefa.descricao || 'Tarefa sem descrição'}}
+        </div>
+        <div>
+            <Cronometro :tempo-em-segundos="tarefa.duracaoEmSegundos"/>
         </div>
     </Box>
 </template>
@@ -34,4 +32,14 @@ export default defineComponent({
     },
 })
 </script>
+
+<style scoped>
+    .box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        color: var(--texto-primario);
+    }
+</style>
 
